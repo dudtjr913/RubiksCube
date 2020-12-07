@@ -1,6 +1,7 @@
 import Cube from './class/cube.js';
 import isInputValid from './input-valid.js';
 
+const cubeGame = new Cube();
 const $cubeForm = document.body.querySelector('form');
 const $cubeInput = $cubeForm.querySelector('input');
 
