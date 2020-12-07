@@ -1,6 +1,11 @@
 import Cube from './class/cube.js';
 import isInputValid from './input-valid.js';
 import {cubeSide, QUIT_INPUT} from './utils.js';
+import {
+  createFinishScreen,
+  createResultScreen,
+  removeResultScreen,
+} from './screen.js';
 
 const cubeGame = new Cube();
 const $cubeForm = document.body.querySelector('form');
@@ -14,7 +19,7 @@ const onSubmitUserInput = () => {
   if (isInputValid(matchedUserInput, $cubeInput.value)) {
     matchedUserInput.forEach((side) => {
       moveCube(side);
-      createResultScreen(side);
+      createResultScreen(cubeGame, side);
     });
   }
 
@@ -42,37 +47,10 @@ const moveCube = (side) => {
   }
 };
 
-const createResultScreen = (side) => {
-  const $cubeUl = document.body.querySelector('#cube-list');
-  const $cubeLi = document.createElement('li');
-
-  $cubeLi.style.marginTop = '15px';
-  $cubeLi.innerHTML = `<b>${side}</b>`;
-
-  cubeGame.cube.forEach((cube) => {
-    $cubeLi.innerHTML += `<div>${cube.join(' ')}</div>`;
-  });
-
-  $cubeUl.appendChild($cubeLi);
-};
-
 const finishGame = () => {
   $cubeForm.removeEventListener('submit', onSubmitUserInput);
   removeResultScreen();
   createFinishScreen();
-};
-
-const removeResultScreen = () => {
-  const $cubeContainer = document.body.querySelector('#cube');
-  const $cubeUl = document.body.querySelector('#cube-list');
-  $cubeContainer.removeChild($cubeUl);
-};
-
-const createFinishScreen = () => {
-  const $cubeContainer = document.body.querySelector('#cube');
-  const $finishText = document.createElement('div');
-  $finishText.textContent = 'Bye~';
-  $cubeContainer.appendChild($finishText);
 };
 
 $cubeForm.addEventListener('submit', onSubmitUserInput);
