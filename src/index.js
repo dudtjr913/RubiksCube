@@ -8,6 +8,7 @@ const onSubmitUserInput = () => {
   if (!isUserInputValid(splitedInput)) {
     return ($cubeInput.value = '');
   }
+  pushUserSelectedWord(splitedInput);
 };
 
 const isUserInputValid = (userInput) => {
@@ -26,5 +27,27 @@ const isUserInputValid = (userInput) => {
 
   return true;
 };
+
+const pushUserSelectedWord = (splitedInput) => {
+  const [word, count, direction] = splitedInput;
+  const upperCaseDirection = direction.toUpperCase();
+  if (
+    (count >= 0 && upperCaseDirection === 'L') ||
+    (count < 0 && upperCaseDirection === 'R')
+  ) {
+    return pushWordLeft(word, Math.abs(count));
+  }
+
+  if (
+    (count >= 0 && upperCaseDirection === 'R') ||
+    (count < 0 && upperCaseDirection === 'L')
+  ) {
+    return pushWordRight(word, Math.abs(count));
+  }
+};
+
+const pushWordLeft = (word, count) => {};
+
+const pushWordRight = (word, count) => {};
 
 $cubeForm.addEventListener('submit', onSubmitUserInput);
