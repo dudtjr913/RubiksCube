@@ -9,8 +9,9 @@ const onSubmitUserInput = () => {
     return ($cubeInput.value = '');
   }
   const pushedWordResult = pushUserSelectedWord(splitedInput);
+  printResultOnScreen($cubeInput.value, pushedWordResult);
 
-  return printResultOnScreen($cubeInput.value, pushedWordResult);
+  return ($cubeInput.value = '');
 };
 
 const isUserInputValid = (userInput) => {
