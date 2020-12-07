@@ -14,7 +14,7 @@ const onSubmitUserInput = () => {
   if (isInputValid(matchedUserInput, $cubeInput.value)) {
     matchedUserInput.forEach((side) => {
       moveCube(side);
-      createOnScreen(side);
+      createResultScreen(side);
     });
   }
 
@@ -42,7 +42,7 @@ const moveCube = (side) => {
   }
 };
 
-const createOnScreen = (side) => {
+const createResultScreen = (side) => {
   const $cubeUl = document.body.querySelector('#cube-list');
   const $cubeLi = document.createElement('li');
 
