@@ -9,54 +9,53 @@ export default class Cube {
       ['G', 'B', 'B'],
     ];
   }
+  static changedCube = null;
 
   moveUp(side) {
-    let changedCube = null;
     if (side === cubeSide.UP_LEFT) {
-      changedCube = pushLeft(this.cube[0]);
+      this.changedCube = pushLeft(this.cube[0]);
     } else {
-      changedCube = pushRight(this.cube[0]);
+      this.changedCube = pushRight(this.cube[0]);
     }
 
-    return (this.cube[0] = changedCube);
+    return (this.cube[0] = this.changedCube);
   }
 
   moveDown(side) {
-    let changedCube = null;
     if (side === cubeSide.DOWN_LEFT) {
-      changedCube = pushLeft(this.cube[2]);
+      this.changedCube = pushLeft(this.cube[2]);
     } else {
-      changedCube = pushRight(this.cube[2]);
+      this.changedCube = pushRight(this.cube[2]);
     }
 
-    return (this.cube[2] = changedCube);
+    return (this.cube[2] = this.changedCube);
   }
 
   moveLeft(side) {
     const leftSideCube = [this.cube[0][0], this.cube[1][0], this.cube[2][0]];
-    let changedCube = null;
+
     if (side === cubeSide.LEFT_UP) {
-      changedCube = pushLeft(leftSideCube);
+      this.changedCube = pushLeft(leftSideCube);
     } else {
-      changedCube = pushRight(leftSideCube);
+      this.changedCube = pushRight(leftSideCube);
     }
 
     return this.cube.forEach((cube, index) => {
-      cube[0] = changedCube[index];
+      cube[0] = this.changedCube[index];
     });
   }
 
   moveRight(side) {
     const rightSideCube = [this.cube[0][2], this.cube[1][2], this.cube[2][2]];
-    let changedCube = null;
+
     if (side === cubeSide.RIGHT_UP) {
-      changedCube = pushLeft(rightSideCube);
+      this.changedCube = pushLeft(rightSideCube);
     } else {
-      changedCube = pushRight(rightSideCube);
+      this.changedCube = pushRight(rightSideCube);
     }
 
     return this.cube.forEach((cube, index) => {
-      cube[2] = changedCube[index];
+      cube[2] = this.changedCube[index];
     });
   }
 }
