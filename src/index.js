@@ -42,18 +42,17 @@ const moveCube = (position) => {
 };
 
 const createOnScreen = (position) => {
-  const $cubeContainer = document.body.querySelector('#cube');
-  const $cubeSection = document.createElement('div');
+  const $cubeUl = document.body.querySelector('#cube-list');
+  const $cubeLi = document.createElement('li');
 
-  $cubeSection.style.marginTop = '15px';
-  $cubeSection.innerHTML = `<span>${position}</span>`;
+  $cubeLi.style.marginTop = '15px';
+  $cubeLi.innerHTML = `<b>${position}</b>`;
 
   cubeGame.cube.forEach((cube) => {
-    $cubeSection.innerHTML += `
-      <div>${cube.join(' ')}</div>
-      `;
+    $cubeLi.innerHTML += `<div>${cube.join(' ')}</div>`;
   });
-  $cubeContainer.appendChild($cubeSection);
+
+  $cubeUl.appendChild($cubeLi);
 };
 
 const finishGame = () => {
