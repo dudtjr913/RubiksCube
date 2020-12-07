@@ -8,7 +8,7 @@ const onSubmitUserInput = () => {
   if (!isUserInputValid(splitedInput)) {
     return ($cubeInput.value = '');
   }
-  pushUserSelectedWord(splitedInput);
+  console.log(pushUserSelectedWord(splitedInput));
 };
 
 const isUserInputValid = (userInput) => {
@@ -34,18 +34,19 @@ const isUserInputValid = (userInput) => {
 const pushUserSelectedWord = (splitedInput) => {
   const [word, count, direction] = splitedInput;
   const upperCaseDirection = direction.toUpperCase();
+  const remainsCount = count % word.length; // 나머지 숫자
   if (
     (count >= 0 && upperCaseDirection === 'L') ||
     (count < 0 && upperCaseDirection === 'R')
   ) {
-    return pushWordLeft(word, Math.abs(count));
+    return pushWordLeft(word, Math.abs(remainsCount));
   }
 
   if (
     (count >= 0 && upperCaseDirection === 'R') ||
     (count < 0 && upperCaseDirection === 'L')
   ) {
-    return pushWordRight(word, Math.abs(count));
+    return pushWordRight(word, Math.abs(remainsCount));
   }
 };
 
