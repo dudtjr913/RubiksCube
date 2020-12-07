@@ -1,17 +1,1 @@
-class Cube {
-  constructor() {
-    this.cube = [
-      [R, R, W],
-      [G, C, W],
-      [G, B, B],
-    ];
-  }
-
-  moveUp() {}
-
-  moveDown() {}
-
-  moveLeft() {}
-
-  moveRight() {}
-}
+import Cube from './class/cube.js';
