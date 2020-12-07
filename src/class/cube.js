@@ -1,3 +1,5 @@
+import {pushLeft, pushRight} from '../cube-push.js';
+
 export default class Cube {
   constructor() {
     this.cube = [
