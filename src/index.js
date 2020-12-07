@@ -27,7 +27,10 @@ const isUserInputValid = (userInput) => {
   if (!(userInput[1] >= -100 && userInput[1] < 100)) {
     return alert('-100 ~ 99까지의 정수를 입력해주세요.');
   }
-  if (userInput[2].match(/[^lr]/i)) {
+  if (
+    userInput[2].toUpperCase() !== 'R' &&
+    userInput[2].toUpperCase() !== 'L'
+  ) {
     return alert('L(l) 또는 R(r)을 입력해주세요.');
   }
 
