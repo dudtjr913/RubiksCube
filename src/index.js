@@ -57,7 +57,14 @@ const createOnScreen = (position) => {
 
 const finishGame = () => {
   $cubeForm.removeEventListener('submit', onSubmitUserInput);
+  removeResultScreen();
   createFinishScreen();
+};
+
+const removeResultScreen = () => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $cubeUl = document.body.querySelector('#cube-list');
+  $cubeContainer.removeChild($cubeUl);
 };
 
 const createFinishScreen = () => {
