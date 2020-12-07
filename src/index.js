@@ -1,5 +1,6 @@
 import Cube from './class/cube.js';
 import isInputValid from './input-valid.js';
+import {cubeSide} from './utils.js';
 
 const cubeGame = new Cube();
 const $cubeForm = document.body.querySelector('form');
@@ -27,16 +28,16 @@ const matchUserInput = (userInput) => {
 };
 
 const moveCube = (position) => {
-  if (position === 'U' || position === "U'") {
+  if (position === cubeSide.UPLEFT || position === cubeSide.UPRIGHT) {
     return cubeGame.moveUp(position);
   }
-  if (position === 'B' || position === "B'") {
+  if (position === cubeSide.DOWNLEFT || position === cubeSide.DOWNRIGHT) {
     return cubeGame.moveDown(position);
   }
-  if (position === 'L' || position === "L'") {
+  if (position === cubeSide.LEFTUP || position === cubeSide.LEFTDOWN) {
     return cubeGame.moveLeft(position);
   }
-  if (position === 'R' || position === "R'") {
+  if (position === cubeSide.RIGHTUP || position === cubeSide.RIGHTDOWN) {
     return cubeGame.moveRight(position);
   }
 };
