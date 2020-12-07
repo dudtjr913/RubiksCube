@@ -12,6 +12,7 @@ const onSubmitUserInput = () => {
   }
   matchedUserInput.forEach((position) => {
     moveCube(position);
+    createOnScreen(position);
   });
 };
 
@@ -34,6 +35,21 @@ const moveCube = (position) => {
   if (position === 'R' || position === "R'") {
     return cubeGame.moveRight(position);
   }
+};
+
+const createOnScreen = (position) => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $cubeSection = document.createElement('div');
+
+  $cubeSection.style.marginTop = '15px';
+  $cubeSection.innerHTML = `<span>${position}</span>`;
+
+  cubeGame.cube.forEach((cube) => {
+    $cubeSection.innerHTML += `
+      <div>${cube.join(' ')}</div>
+      `;
+  });
+  $cubeContainer.appendChild($cubeSection);
 };
 
 $cubeForm.addEventListener('submit', onSubmitUserInput);
