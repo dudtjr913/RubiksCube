@@ -1,10 +1,10 @@
 export const cubeSide = {
-  UPLEFT: 'U',
-  UPRIGHT: "U'",
-  DOWNRIGHT: 'B',
-  DOWNLEFT: "B'",
-  LEFTDOWN: 'L',
-  LEFTUP: "L'",
-  RIGHTUP: 'R',
-  RIGHTDOWN: "R'",
+  UP_LEFT: 'U',
+  UP_RIGHT: "U'",
+  DOWN_RIGHT: 'B',
+  DOWN_LEFT: "B'",
+  LEFT_DOWN: 'L',
+  LEFT_UP: "L'",
+  RIGHT_UP: 'R',
+  RIGHT_DOWN: "R'",
 };

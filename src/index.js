@@ -28,16 +28,16 @@ const matchUserInput = (userInput) => {
 };
 
 const moveCube = (side) => {
-  if (side === cubeSide.UPLEFT || side === cubeSide.UPRIGHT) {
+  if (side === cubeSide.UP_LEFT || side === cubeSide.UP_RIGHT) {
     return cubeGame.moveUp(side);
   }
-  if (side === cubeSide.DOWNLEFT || side === cubeSide.DOWNRIGHT) {
+  if (side === cubeSide.DOWN_LEFT || side === cubeSide.DOWN_RIGHT) {
     return cubeGame.moveDown(side);
   }
-  if (side === cubeSide.LEFTUP || side === cubeSide.LEFTDOWN) {
+  if (side === cubeSide.LEFT_UP || side === cubeSide.LEFT_DOWN) {
     return cubeGame.moveLeft(side);
   }
-  if (side === cubeSide.RIGHTUP || side === cubeSide.RIGHTDOWN) {
+  if (side === cubeSide.RIGHT_UP || side === cubeSide.RIGHT_DOWN) {
     return cubeGame.moveRight(side);
   }
 };
