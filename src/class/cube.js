@@ -1,4 +1,5 @@
 import {pushLeft, pushRight} from '../cube-push.js';
+import {cubeSide} from '../utils.js';
 
 export default class Cube {
   constructor() {
@@ -9,9 +10,9 @@ export default class Cube {
     ];
   }
 
-  moveUp(position) {
+  moveUp(side) {
     let changedCube = null;
-    if (position === 'U') {
+    if (side === cubeSide.UP_LEFT) {
       changedCube = pushLeft(this.cube[0]);
     } else {
       changedCube = pushRight(this.cube[0]);
@@ -20,25 +21,24 @@ export default class Cube {
     return (this.cube[0] = changedCube);
   }
 
-  moveDown(position) {
+  moveDown(side) {
     let changedCube = null;
-    if (position === 'B') {
-      changedCube = pushRight(this.cube[2]);
-    } else {
+    if (side === cubeSide.DOWN_LEFT) {
       changedCube = pushLeft(this.cube[2]);
+    } else {
+      changedCube = pushRight(this.cube[2]);
     }
 
     return (this.cube[2] = changedCube);
   }
 
-  moveLeft(position) {
+  moveLeft(side) {
     const leftSideCube = [this.cube[0][0], this.cube[1][0], this.cube[2][0]];
     let changedCube = null;
-    if (position === 'L') {
-      changedCube = pushRight(leftSideCube);
-    }
-    if (position === "L'") {
+    if (side === cubeSide.LEFT_UP) {
       changedCube = pushLeft(leftSideCube);
+    } else {
+      changedCube = pushRight(leftSideCube);
     }
 
     return this.cube.forEach((cube, index) => {
@@ -46,13 +46,12 @@ export default class Cube {
     });
   }
 
-  moveRight(position) {
+  moveRight(side) {
     const rightSideCube = [this.cube[0][2], this.cube[1][2], this.cube[2][2]];
     let changedCube = null;
-    if (position === 'R') {
+    if (side === cubeSide.RIGHT_UP) {
       changedCube = pushLeft(rightSideCube);
-    }
-    if (position === "R'") {
+    } else {
       changedCube = pushRight(rightSideCube);
     }
 
