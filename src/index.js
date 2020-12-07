@@ -7,13 +7,17 @@ const $cubeInput = $cubeForm.querySelector('input');
 
 const onSubmitUserInput = () => {
   const matchedUserInput = matchUserInput($cubeInput.value);
-  if (!isInputValid(matchedUserInput, $cubeInput.value)) {
-    return ($cubeInput.value = '');
+  if ($cubeInput.value === 'Q') {
+    return finishGame();
   }
-  matchedUserInput.forEach((position) => {
-    moveCube(position);
-    createOnScreen(position);
-  });
+  if (isInputValid(matchedUserInput, $cubeInput.value)) {
+    matchedUserInput.forEach((position) => {
+      moveCube(position);
+      createOnScreen(position);
+    });
+  }
+
+  return ($cubeInput.value = '');
 };
 
 const matchUserInput = (userInput) => {
@@ -50,6 +54,18 @@ const createOnScreen = (position) => {
       `;
   });
   $cubeContainer.appendChild($cubeSection);
+};
+
+const finishGame = () => {
+  $cubeForm.removeEventListener('submit', onSubmitUserInput);
+  createFinishScreen();
+};
+
+const createFinishScreen = () => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $finishText = document.createElement('div');
+  $finishText.textContent = 'Bye~';
+  $cubeContainer.appendChild($finishText);
 };
 
 $cubeForm.addEventListener('submit', onSubmitUserInput);
