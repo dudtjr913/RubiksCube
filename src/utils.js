@@ -8,3 +8,5 @@ export const cubeSide = {
   RIGHT_UP: 'R',
   RIGHT_DOWN: "R'",
 };
+
+export const QUIT_INPUT = 'Q';

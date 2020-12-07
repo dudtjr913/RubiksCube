@@ -1,6 +1,6 @@
 import Cube from './class/cube.js';
 import isInputValid from './input-valid.js';
-import {cubeSide} from './utils.js';
+import {cubeSide, QUIT_INPUT} from './utils.js';
 
 const cubeGame = new Cube();
 const $cubeForm = document.body.querySelector('form');
@@ -8,7 +8,7 @@ const $cubeInput = $cubeForm.querySelector('input');
 
 const onSubmitUserInput = () => {
   const matchedUserInput = matchUserInput($cubeInput.value);
-  if ($cubeInput.value === 'Q') {
+  if ($cubeInput.value === QUIT_INPUT) {
     return finishGame();
   }
   if (isInputValid(matchedUserInput, $cubeInput.value)) {
