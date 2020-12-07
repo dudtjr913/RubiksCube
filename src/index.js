@@ -12,9 +12,9 @@ const onSubmitUserInput = () => {
     return finishGame();
   }
   if (isInputValid(matchedUserInput, $cubeInput.value)) {
-    matchedUserInput.forEach((position) => {
-      moveCube(position);
-      createOnScreen(position);
+    matchedUserInput.forEach((side) => {
+      moveCube(side);
+      createOnScreen(side);
     });
   }
 
@@ -27,27 +27,27 @@ const matchUserInput = (userInput) => {
   return matchedUserInput;
 };
 
-const moveCube = (position) => {
-  if (position === cubeSide.UPLEFT || position === cubeSide.UPRIGHT) {
-    return cubeGame.moveUp(position);
+const moveCube = (side) => {
+  if (side === cubeSide.UPLEFT || side === cubeSide.UPRIGHT) {
+    return cubeGame.moveUp(side);
   }
-  if (position === cubeSide.DOWNLEFT || position === cubeSide.DOWNRIGHT) {
-    return cubeGame.moveDown(position);
+  if (side === cubeSide.DOWNLEFT || side === cubeSide.DOWNRIGHT) {
+    return cubeGame.moveDown(side);
   }
-  if (position === cubeSide.LEFTUP || position === cubeSide.LEFTDOWN) {
-    return cubeGame.moveLeft(position);
+  if (side === cubeSide.LEFTUP || side === cubeSide.LEFTDOWN) {
+    return cubeGame.moveLeft(side);
   }
-  if (position === cubeSide.RIGHTUP || position === cubeSide.RIGHTDOWN) {
-    return cubeGame.moveRight(position);
+  if (side === cubeSide.RIGHTUP || side === cubeSide.RIGHTDOWN) {
+    return cubeGame.moveRight(side);
   }
 };
 
-const createOnScreen = (position) => {
+const createOnScreen = (side) => {
   const $cubeUl = document.body.querySelector('#cube-list');
   const $cubeLi = document.createElement('li');
 
   $cubeLi.style.marginTop = '15px';
-  $cubeLi.innerHTML = `<b>${position}</b>`;
+  $cubeLi.innerHTML = `<b>${side}</b>`;
 
   cubeGame.cube.forEach((cube) => {
     $cubeLi.innerHTML += `<div>${cube.join(' ')}</div>`;
