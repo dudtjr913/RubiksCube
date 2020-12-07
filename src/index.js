@@ -1,7 +1,7 @@
 import isUserInputValid from './input-valid.js';
 import pushUserSelectedWord from './push-word.js';
 
-const startCubeGame = (function () {
+(function () {
   const $cubeForm = document.body.querySelector('form');
   const $cubeInput = $cubeForm.querySelector('input');
 
