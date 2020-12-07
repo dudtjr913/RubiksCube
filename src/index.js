@@ -9,6 +9,8 @@ const onSubmitUserInput = () => {
     return ($cubeInput.value = '');
   }
   const pushedWordResult = pushUserSelectedWord(splitedInput);
+
+  return printResultOnScreen($cubeInput.value, pushedWordResult);
 };
 
 const isUserInputValid = (userInput) => {
@@ -64,6 +66,19 @@ const pushWordRight = (word, count) => {
   const result = [...pushedWord, ...splitedWord];
 
   return result.join('');
+};
+
+const printResultOnScreen = (userInput, resultWord) => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $userInputText = document.createElement('div');
+  const $resultText = document.createElement('div');
+
+  $userInputText.textContent = `> ${userInput}`;
+  $resultText.textContent = `${resultWord}`;
+  $userInputText.style.marginTop = '15px';
+
+  $cubeContainer.appendChild($userInputText);
+  $cubeContainer.appendChild($resultText);
 };
 
 $cubeForm.addEventListener('submit', onSubmitUserInput);
