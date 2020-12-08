@@ -1,8 +1,13 @@
+import isInputValid from './input-valid.js';
+
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
 
 const onSubmitUserInput = () => {
   const matchedInput = extractMatchedInput();
+  if (isInputValid(matchedInput, $userInput.value)) {
+    console.log('success');
+  }
 };
 
 const extractMatchedInput = () => {
