@@ -6,7 +6,7 @@ const $userInput = $userForm.querySelector('input');
 const onSubmitUserInput = () => {
   const matchedInput = extractMatchedInput();
   if (isInputValid(matchedInput, $userInput.value)) {
-    console.log('success');
+    const requiredValue = changeNumberTwo(matchedInput);
   }
 };
 
@@ -16,6 +16,14 @@ const extractMatchedInput = () => {
   );
 
   return matchedInput;
+};
+
+const changeNumberTwo = (matchedInput) => {
+  const convertedValue = matchedInput.map((value, index) => {
+    return value === '2' ? matchedInput[index - 1] : value;
+  });
+
+  return convertedValue;
 };
 
 $userForm.addEventListener('submit', onSubmitUserInput);
