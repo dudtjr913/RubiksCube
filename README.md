@@ -12,7 +12,7 @@
 
 ## 기능 구현 목록
 
-- html에 큐브의 초기 상태를 표시할 태그들을 입력한다.(pre, code, form, input, ul)
+- ✔ html에 큐브의 초기 상태를 표시할 태그들을 입력한다.(pre, code, form, input, ul)
 - form에 sumbit 이벤트를 등록한다.
 - 유저의 input을 받아 유효성을 검사한다.
   - 예외처리)
