@@ -73,7 +73,18 @@ export default class Cube {
     changeCube(flatCubes, extractionSides, pushedCube);
   }
 
-  turnRight(formula) {}
+  turnRight(formula) {
+    const flatCubes = [this.cube[U], this.cube[F], this.cube[D], this.cube[B]];
+    const extractionSides = [RIGHT, RIGHT, RIGHT, LEFT];
+    const sideEntry = extractSide(flatCubes, extractionSides);
+    let pushedCube = [];
+    if (formula.includes("'")) {
+      pushedCube = pushCounterClockWise(sideEntry);
+    } else {
+      pushedCube = pushClockWise(sideEntry);
+    }
+    changeCube(flatCubes, extractionSides, pushedCube);
+  }
 }
 
 const createCube = () => {
