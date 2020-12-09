@@ -25,3 +25,13 @@ export const removeResultScreen = () => {
   const $screenUl = document.body.querySelector('#cube-list');
   $cubeContainer.removeChild($screenUl);
 };
+
+export const createFinishTextOnScreen = (count) => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $finishContainer = document.createElement('div');
+  $finishContainer.innerHTML = `
+  <div>조작갯수 : ${count}</div>
+  <div>이용해주셔서 감사합니다. 뚜뚜뚜.</div>
+  `;
+  $cubeContainer.appendChild($finishContainer);
+};
