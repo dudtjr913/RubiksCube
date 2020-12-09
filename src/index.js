@@ -7,6 +7,10 @@ const $userInput = $userForm.querySelector('input');
 const cubeGame = new Cube();
 
 const onSubmitUserInput = () => {
+  if ($userInput.value === 'Q') {
+    return finishGame();
+  }
+
   const matchedInput = extractMatchedInput();
   if (isInputValid(matchedInput, $userInput.value)) {
     const requiredValue = changeNumberTwo(matchedInput);
