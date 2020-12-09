@@ -1,8 +1,12 @@
+import {FLAT_CUBE, EXTRACT_SIDE} from '../utils.js';
+
+const {U, B, L, F, R, D} = FLAT_CUBE;
+const {UP, LEFT, DOWN, RIGHT} = EXTRACT_SIDE;
+
 export default class Cube {
   constructor() {
     this.cube = createCube();
   }
-
   turnFront(formula) {}
 
   turnBack(formula) {}
