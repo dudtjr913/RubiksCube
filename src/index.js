@@ -5,6 +5,7 @@ import {
   removeResultScreen,
   createFinishTextOnScreen,
 } from './screen.js';
+import {ERROR_MESSAGE} from './utils.js';
 
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
@@ -65,7 +66,7 @@ const startCubeTurn = (formula) => {
       cubeGame.turnRight(formula);
       break;
     default:
-      alert('올바르지 않은 공식입니다.');
+      alert(ERROR_MESSAGE.WRONG_FOLMULA);
   }
 };
 

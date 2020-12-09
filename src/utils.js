@@ -17,6 +17,7 @@ export const EXTRACT_SIDE = {
 export const ERROR_MESSAGE = {
   WRONG_INPUT: "2, U('), D('), F('), B('), R('), L(')만 입력할 수 있습니다.",
   LENGTH_LIMIT: '20개 이하로 입력해주세요.',
+  WRONG_FOLMULA: '올바르지 않은 공식입니다.',
 };
 
 export const FINISH_MESSAGE = {
