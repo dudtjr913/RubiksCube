@@ -10,7 +10,6 @@ const onSubmitUserInput = () => {
   if (isInputValid(matchedInput, $userInput.value)) {
     const requiredValue = changeNumberTwo(matchedInput);
     requiredValue.forEach((formula) => startCubeTurn(formula));
-    console.log(cubeGame.cube);
   }
 };
 
