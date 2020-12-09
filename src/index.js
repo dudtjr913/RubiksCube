@@ -8,11 +8,12 @@ const cubeGame = new Cube();
 
 const onSubmitUserInput = () => {
   if ($userInput.value === 'Q') {
-    return finishGame();
+    return finishGame(cubeGame.count);
   }
 
   const matchedInput = extractMatchedInput();
   if (isInputValid(matchedInput, $userInput.value)) {
+    cubeGame.count += matchedInput.length;
     const requiredValue = changeNumberTwo(matchedInput);
     requiredValue.forEach((formula) => {
       startCubeTurn(formula);
@@ -72,7 +73,7 @@ const createJoinedCube = (cube) => {
   return joinedCube;
 };
 
-const finishGame = () => {
+const finishGame = (count) => {
   $userForm.removeEventListener('submit', onSubmitUserInput);
   $userInput.value = '게임을 종료합니다.';
   removeResultScreen();
