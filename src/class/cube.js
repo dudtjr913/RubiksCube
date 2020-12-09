@@ -15,6 +15,12 @@ export default class Cube {
     const flatCubes = [this.cube[L], this.cube[F], this.cube[R], this.cube[B]];
     const extractionSides = [UP, UP, UP, UP];
     const sideEntry = extractSide(flatCubes, extractionSides);
+    let pushedCube = [];
+    if (formula.includes("'")) {
+      pushedCube = pushCounterClockWise(sideEntry);
+    } else {
+      pushedCube = pushClockWise(sideEntry);
+    }
   }
 
   turnDown(formula) {}
