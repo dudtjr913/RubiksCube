@@ -47,7 +47,18 @@ export default class Cube {
     changeCube(flatCubes, extractionSides, pushedCube);
   }
 
-  turnDown(formula) {}
+  turnDown(formula) {
+    const flatCubes = [this.cube[L], this.cube[F], this.cube[R], this.cube[B]];
+    const extractionSides = [DOWN, DOWN, DOWN, DOWN];
+    const sideEntry = extractSide(flatCubes, extractionSides);
+    let pushedCube = [];
+    if (formula.includes("'")) {
+      pushedCube = pushCounterClockWise(sideEntry);
+    } else {
+      pushedCube = pushClockWise(sideEntry);
+    }
+    changeCube(flatCubes, extractionSides, pushedCube);
+  }
 
   turnLeft(formula) {}
 
