@@ -12,7 +12,8 @@ const onSubmitUserInput = () => {
     const requiredValue = changeNumberTwo(matchedInput);
     requiredValue.forEach((formula) => {
       startCubeTurn(formula);
-      createResultScreen(cubeGame.cube);
+      const joinedCube = createJoinedCube(cubeGame.cube);
+      createResultScreen(joinedCube, formula);
     });
   }
 };
@@ -56,6 +57,14 @@ const startCubeTurn = (formula) => {
     default:
       alert('올바르지 않은 공식입니다.');
   }
+};
+
+const createJoinedCube = (cube) => {
+  const joinedCube = cube.map((flatCube) =>
+    flatCube.map((side) => side.join(' ')),
+  );
+
+  return joinedCube;
 };
 
 $userForm.addEventListener('submit', onSubmitUserInput);

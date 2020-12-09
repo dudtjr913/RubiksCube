@@ -1,8 +1,9 @@
-export const createResultScreen = (cube) => {
+export const createResultScreen = (cube, formula) => {
   const $screenUl = document.body.querySelector('#cube-list');
   const $screenLi = document.createElement('li');
   $screenLi.innerHTML = `
     <pre>
+  공식 : ${formula}
                  ${cube[0][0]}
                  ${cube[0][1]}
                  ${cube[0][2]}
