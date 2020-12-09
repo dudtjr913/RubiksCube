@@ -39,4 +39,17 @@ const createFlatCube = (color) => {
   return flatCube;
 };
 
-const extractSide = (flatCubes, extractionSides) => {};
+const extractSide = (flatCubes, extractionSides) => {
+  const sideEntry = [];
+  flatCubes.forEach((flatCube, index) => {
+    if (extractionSides[index] === LEFT || extractionSides[index] === RIGHT) {
+      const column = extractColumn(flatCube, extractionSides[index] - 1);
+      sideEntry.push(column);
+    } else {
+      const row = extractRow(flatCubes, extractionSides[index]);
+      sideEntry.push(row);
+    }
+  });
+
+  return sideEntry;
+};
