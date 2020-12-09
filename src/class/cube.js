@@ -76,7 +76,7 @@ const extractRow = (flatCube, extractSide) => {
 const pushClockWise = (sideEntry) => {
   const copySideEntry = [...sideEntry];
   const pushedSide = copySideEntry.pop();
-  const result = [...pushedSide, ...copySideEntry];
+  const result = [pushedSide, ...copySideEntry];
 
   return result;
 };
@@ -84,7 +84,7 @@ const pushClockWise = (sideEntry) => {
 const pushCounterClockWise = (sideEntry) => {
   const copySideEntry = [...sideEntry];
   const pushedSide = copySideEntry.shift();
-  const result = [...copySideEntry, ...pushedSide];
+  const result = [...copySideEntry, pushedSide];
 
   return result;
 };
