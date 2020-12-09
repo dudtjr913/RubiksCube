@@ -16,6 +16,7 @@ const onSubmitUserInput = () => {
       createResultScreen(joinedCube, formula);
     });
   }
+  $userInput.value = '';
 };
 
 const extractMatchedInput = () => {
