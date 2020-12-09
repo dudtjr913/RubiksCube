@@ -79,7 +79,6 @@ const createJoinedCube = (cube) => {
 
 const finishGame = (count) => {
   $userForm.removeEventListener('submit', onSubmitUserInput);
-  $userInput.value = '게임을 종료합니다.';
   removeResultScreen();
   createFinishTextOnScreen(count);
 };
