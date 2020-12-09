@@ -3,17 +3,17 @@ export default class Cube {
     this.cube = createCube();
   }
 
-  turnFront() {}
+  turnFront(formula) {}
 
-  turnBack() {}
+  turnBack(formula) {}
 
-  turnUp() {}
+  turnUp(formula) {}
 
-  turnDown() {}
+  turnDown(formula) {}
 
-  turnLeft() {}
+  turnLeft(formula) {}
 
-  turnRight() {}
+  turnRight(formula) {}
 }
 
 const createCube = () => {
