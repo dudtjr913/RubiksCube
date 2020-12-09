@@ -1,6 +1,6 @@
 import isInputValid from './input-valid.js';
 import Cube from './class/cube.js';
-import {createResultScreen} from './screen.js';
+import {createResultScreen, removeResultScreen} from './screen.js';
 
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
@@ -75,6 +75,7 @@ const createJoinedCube = (cube) => {
 const finishGame = () => {
   $userForm.removeEventListener('submit', onSubmitUserInput);
   $userInput.value = '게임을 종료합니다.';
+  removeResultScreen();
 };
 
 $userForm.addEventListener('submit', onSubmitUserInput);

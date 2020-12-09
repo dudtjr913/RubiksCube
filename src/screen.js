@@ -19,3 +19,9 @@ export const createResultScreen = (cube, formula) => {
   `;
   $screenUl.appendChild($screenLi);
 };
+
+export const removeResultScreen = () => {
+  const $cubeContainer = document.body.querySelector('#cube');
+  const $screenUl = document.body.querySelector('#cube-list');
+  $cubeContainer.removeChild($screenUl);
+};
