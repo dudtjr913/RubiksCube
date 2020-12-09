@@ -99,3 +99,13 @@ const changeCube = (flatCubes, extractionSides, pushedCube) => {
     }
   });
 };
+
+const changeCubeColumn = (flatCube, extractionSide, pushedSide) => {
+  return flatCube.forEach(
+    (side, index) => (side[extractionSide] = pushedSide[index]),
+  );
+};
+
+const changeCubeRow = (flatCube, extractionSide, pushedSide) => {
+  return (flatCube[extractionSide] = pushedSide);
+};
