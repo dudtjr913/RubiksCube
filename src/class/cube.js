@@ -61,15 +61,15 @@ const extractSide = (flatCubes, extractionSides) => {
   return sideEntry;
 };
 
-const extractColumn = (flatCube, extractSide) => {
+const extractColumn = (flatCube, extractionSide) => {
   const column = [];
-  flatCube.forEach((side) => column.push(side[extractSide]));
+  flatCube.forEach((side) => column.push(side[extractionSide]));
 
   return column;
 };
 
-const extractRow = (flatCube, extractSide) => {
-  const row = flatCube[extractSide];
+const extractRow = (flatCube, extractionSide) => {
+  const row = flatCube[extractionSide];
 
   return row;
 };
