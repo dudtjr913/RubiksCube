@@ -21,6 +21,7 @@ export default class Cube {
     } else {
       pushedCube = pushClockWise(sideEntry);
     }
+    changeCube(flatCubes, extractionSides, pushedCube);
   }
 
   turnDown(formula) {}
@@ -87,4 +88,14 @@ const pushCounterClockWise = (sideEntry) => {
   const result = [...copySideEntry, pushedSide];
 
   return result;
+};
+
+const changeCube = (flatCubes, extractionSides, pushedCube) => {
+  flatCubes.forEach((flatCube, index) => {
+    if (extractionSides[index] === LEFT || extractionSides[index] === RIGHT) {
+      changeCubeColumn(flatCube, extractionSides[index] - 1, pushedCube[index]);
+    } else {
+      changeCubeRow(flatCube, extractionSides[index], pushedCube[index]);
+    }
+  });
 };
