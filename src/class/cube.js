@@ -46,7 +46,7 @@ const extractSide = (flatCubes, extractionSides) => {
       const column = extractColumn(flatCube, extractionSides[index] - 1);
       sideEntry.push(column);
     } else {
-      const row = extractRow(flatCubes, extractionSides[index]);
+      const row = extractRow(flatCube, extractionSides[index]);
       sideEntry.push(row);
     }
   });
