@@ -27,9 +27,9 @@ export default class Cube {
     const sideEntry = extractSide(flatCubes, extractionSides);
     let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
-    } else {
       pushedCube = pushClockWise(sideEntry);
+    } else {
+      pushedCube = pushCounterClockWise(sideEntry);
     }
     changeCube(flatCubes, extractionSides, pushedCube);
   }
@@ -40,9 +40,9 @@ export default class Cube {
     const sideEntry = extractSide(flatCubes, extractionSides);
     let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
-    } else {
       pushedCube = pushClockWise(sideEntry);
+    } else {
+      pushedCube = pushCounterClockWise(sideEntry);
     }
     changeCube(flatCubes, extractionSides, pushedCube);
   }
@@ -79,16 +79,16 @@ export default class Cube {
     const sideEntry = extractSide(flatCubes, extractionSides);
     let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
-    } else {
       pushedCube = pushClockWise(sideEntry);
+    } else {
+      pushedCube = pushCounterClockWise(sideEntry);
     }
     changeCube(flatCubes, extractionSides, pushedCube);
   }
 }
 
 const createCube = () => {
-  const color = ['B', 'W', 'O', 'G', 'Y', 'R'];
+  const color = ['W', 'B', 'O', 'G', 'R', 'Y'];
   const emptyCube = Array(6).fill([]);
   const cube = emptyCube.map((_, index) => createFlatCube(color[index]));
 
