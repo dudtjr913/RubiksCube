@@ -6,6 +6,7 @@ const {UP, LEFT, DOWN, RIGHT} = EXTRACT_SIDE;
 export default class Cube {
   constructor() {
     this.cube = createCube();
+    this.count = 0;
   }
 
   turnFront(formula) {
