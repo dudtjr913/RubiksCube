@@ -24,3 +24,14 @@ export const FINISH_MESSAGE = {
   TURN_COUNT: '조작갯수 : ',
   THANK_MESSAGE: '이용해주셔서 감사합니다. 뚜뚜뚜.',
 };
+
+export const USER_INPUT = {
+  QUIT: 'Q',
+  UP: 'U',
+  DOWN: 'D',
+  FRONT: 'F',
+  BACK: 'B',
+  LEFT: 'L',
+  RIGHT: 'R',
+  NUMBER: '2',
+};

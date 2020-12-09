@@ -5,14 +5,14 @@ import {
   removeResultScreen,
   createFinishTextOnScreen,
 } from './screen.js';
-import {ERROR_MESSAGE} from './utils.js';
+import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
 
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
 const cubeGame = new Cube();
 
 const onSubmitUserInput = () => {
-  if ($userInput.value === 'Q') {
+  if ($userInput.value === USER_INPUT.QUIT) {
     return finishGame(cubeGame.count);
   }
 
@@ -39,7 +39,7 @@ const extractMatchedInput = () => {
 
 const changeNumberTwo = (matchedInput) => {
   const convertedValue = matchedInput.map((value, index) => {
-    return value === '2' ? matchedInput[index - 1] : value;
+    return value === USER_INPUT.NUMBER ? matchedInput[index - 1] : value;
   });
 
   return convertedValue;
@@ -47,22 +47,22 @@ const changeNumberTwo = (matchedInput) => {
 
 const startCubeTurn = (formula) => {
   switch (formula[0]) {
-    case 'U':
+    case USER_INPUT.UP:
       cubeGame.turnUp(formula);
       break;
-    case 'D':
+    case USER_INPUT.DOWN:
       cubeGame.turnDown(formula);
       break;
-    case 'F':
+    case USER_INPUT.FRONT:
       cubeGame.turnFront(formula);
       break;
-    case 'B':
+    case USER_INPUT.BACK:
       cubeGame.turnBack(formula);
       break;
-    case 'L':
+    case USER_INPUT.LEFT:
       cubeGame.turnLeft(formula);
       break;
-    case 'R':
+    case USER_INPUT.RIGHT:
       cubeGame.turnRight(formula);
       break;
     default:
