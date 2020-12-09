@@ -9,6 +9,8 @@ const onSubmitUserInput = () => {
   const matchedInput = extractMatchedInput();
   if (isInputValid(matchedInput, $userInput.value)) {
     const requiredValue = changeNumberTwo(matchedInput);
+    requiredValue.forEach((formula) => startCubeTurn(formula));
+    console.log(cubeGame.cube);
   }
 };
 
@@ -26,6 +28,31 @@ const changeNumberTwo = (matchedInput) => {
   });
 
   return convertedValue;
+};
+
+const startCubeTurn = (formula) => {
+  switch (formula[0]) {
+    case 'U':
+      cubeGame.turnUp(formula);
+      break;
+    case 'D':
+      cubeGame.turnDown(formula);
+      break;
+    case 'F':
+      cubeGame.turnFront(formula);
+      break;
+    case 'B':
+      cubeGame.turnBack(formula);
+      break;
+    case 'L':
+      cubeGame.turnLeft(formula);
+      break;
+    case 'R':
+      cubeGame.turnRight(formula);
+      break;
+    default:
+      alert('올바르지 않은 공식입니다.');
+  }
 };
 
 $userForm.addEventListener('submit', onSubmitUserInput);
