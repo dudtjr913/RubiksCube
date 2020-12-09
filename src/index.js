@@ -1,5 +1,6 @@
 import isInputValid from './input-valid.js';
 import Cube from './class/cube.js';
+import {createResultScreen} from './screen.js';
 
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
@@ -9,7 +10,10 @@ const onSubmitUserInput = () => {
   const matchedInput = extractMatchedInput();
   if (isInputValid(matchedInput, $userInput.value)) {
     const requiredValue = changeNumberTwo(matchedInput);
-    requiredValue.forEach((formula) => startCubeTurn(formula));
+    requiredValue.forEach((formula) => {
+      startCubeTurn(formula);
+      createResultScreen(cubeGame.cube);
+    });
   }
 };
 
