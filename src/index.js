@@ -7,11 +7,9 @@ import {
 } from './screen.js';
 import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
 
-const $userForm = document.body.querySelector('form');
-const $userInput = $userForm.querySelector('input');
 const cubeGame = new Cube();
 
-const onSubmitUserInput = () => {
+export default function onSubmitUserInput() {
   if ($userInput.value === USER_INPUT.QUIT) {
     return finishGame(cubeGame.count);
   }
@@ -27,7 +25,7 @@ const onSubmitUserInput = () => {
     });
   }
   $userInput.value = '';
-};
+}
 
 const extractMatchedInput = () => {
   const matchedInput = $userInput.value.match(
@@ -83,5 +81,3 @@ const finishGame = (count) => {
   removeResultScreen();
   createFinishTextOnScreen(count);
 };
-
-$userForm.addEventListener('submit', onSubmitUserInput);
