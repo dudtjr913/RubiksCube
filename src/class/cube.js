@@ -53,3 +53,16 @@ const extractSide = (flatCubes, extractionSides) => {
 
   return sideEntry;
 };
+
+const extractColumn = (flatCube, extractSide) => {
+  const column = [];
+  flatCube.forEach((side) => column.push(side[extractSide]));
+
+  return column;
+};
+
+const extractRow = (flatCube, extractSide) => {
+  const row = flatCube[extractSide];
+
+  return row;
+};
