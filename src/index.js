@@ -1,7 +1,9 @@
 import isInputValid from './input-valid.js';
+import Cube from './class/cube.js';
 
 const $userForm = document.body.querySelector('form');
 const $userInput = $userForm.querySelector('input');
+const cubeGame = new Cube();
 
 const onSubmitUserInput = () => {
   const matchedInput = extractMatchedInput();
