@@ -14,7 +14,7 @@ export default class Cube {
   turnUp(formula) {
     const flatCubes = [this.cube[L], this.cube[F], this.cube[R], this.cube[B]];
     const extractionSides = [UP, UP, UP, UP];
-    const sideEntry = extractSide(flatCube, extractionSides);
+    const sideEntry = extractSide(flatCubes, extractionSides);
   }
 
   turnDown(formula) {}
