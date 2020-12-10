@@ -81,6 +81,7 @@ const finishGame = (count) => {
 
 const mixCube = () => {
   const randomFormula = createRandomFormula();
+  randomFormula.forEach((formula) => startCubeTurn(formula));
   const joinedCube = createJoinedCube();
   createInitialScreen(joinedCube);
 };
