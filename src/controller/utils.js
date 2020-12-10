@@ -38,3 +38,5 @@ export const USER_INPUT = {
 };
 
 export const CUBE_COLOR = ['B', 'W', 'O', 'G', 'Y', 'R'];
+export const CUBE_SIDE = ['U', 'D', 'R', 'L', 'F', 'B'];
+export const MIX_COUNT = 16;

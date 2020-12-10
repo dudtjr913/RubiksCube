@@ -11,7 +11,12 @@ import {
   extractMatchedInput,
   changeNumberTwo,
 } from './controller/input/convert.js';
-import {ERROR_MESSAGE, USER_INPUT} from './controller/utils.js';
+import {
+  ERROR_MESSAGE,
+  USER_INPUT,
+  CUBE_SIDE,
+  MIX_COUNT,
+} from './controller/utils.js';
 
 const cubeGame = new Cube();
 const startTime = new Date().getTime();
@@ -75,8 +80,19 @@ const finishGame = (count) => {
 };
 
 const mixCube = () => {
+  const randomFormula = createRandomFormula();
   const joinedCube = createJoinedCube();
   createInitialScreen(joinedCube);
+};
+
+const createRandomFormula = () => {
+  const formula = [];
+  while (formula.length < MIX_COUNT) {
+    const randomIndex = Math.floor(Math.random() * CUBE_SIDE.length);
+    formula.push(CUBE_SIDE[randomIndex]);
+  }
+
+  return formula;
 };
 
 mixCube();
