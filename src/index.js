@@ -13,6 +13,7 @@ import {
 import {ERROR_MESSAGE, USER_INPUT} from './controller/utils.js';
 
 const cubeGame = new Cube();
+const startTime = new Date().getTime();
 
 export default function onSubmitUserInput() {
   if ($userInput.value === USER_INPUT.QUIT) {
@@ -66,7 +67,8 @@ const createJoinedCube = () => {
 };
 
 const finishGame = (count) => {
+  const elapsedTime = (new Date().getTime() - startTime) / 1000;
   $userForm.removeEventListener('submit', onSubmitUserInput);
   removeResultScreen();
-  createFinishTextOnScreen(count);
+  createFinishTextOnScreen(count, elapsedTime.toFixed(0));
 };
