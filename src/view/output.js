@@ -3,9 +3,14 @@ import {FINISH_MESSAGE} from '../controller/utils.js';
 export const createResultScreen = (cube, formula) => {
   const $screenUl = document.body.querySelector('#cube-list');
   const $screenLi = document.createElement('li');
-  $screenLi.innerHTML = `
+  $screenLi.innerHTML = createCubeShape(cube, formula);
+  $screenUl.appendChild($screenLi);
+};
+
+const createCubeShape = (cube, formula) => {
+  return `    
     <pre>
-  공식 : ${formula}
+  ${formula ? `공식 : ${formula}` : ''}
                  ${cube[0][0]}
                  ${cube[0][1]}
                  ${cube[0][2]}
@@ -18,8 +23,7 @@ export const createResultScreen = (cube, formula) => {
                  ${cube[5][1]}
                  ${cube[5][2]}
     </pre>
-  `;
-  $screenUl.appendChild($screenLi);
+    `;
 };
 
 export const removeResultScreen = () => {
