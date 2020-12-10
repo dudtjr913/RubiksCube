@@ -6,6 +6,7 @@ import {
   createFinishTextOnScreen,
 } from './screen.js';
 import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
+import {$userForm, $userInput} from './view/input.js';
 
 const cubeGame = new Cube();
 
