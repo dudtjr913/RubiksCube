@@ -1,5 +1,6 @@
 import Cube from './model/cube.js';
 import {
+  createInitialScreen,
   createResultScreen,
   removeResultScreen,
   createFinishTextOnScreen,
@@ -72,3 +73,10 @@ const finishGame = (count) => {
   removeResultScreen();
   createFinishTextOnScreen(count, elapsedTime.toFixed(0));
 };
+
+const mixCube = () => {
+  const joinedCube = createJoinedCube();
+  createInitialScreen(joinedCube);
+};
+
+mixCube();
