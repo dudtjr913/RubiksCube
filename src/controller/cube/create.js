@@ -1,5 +1,7 @@
+import {CUBE_COLOR} from '../utils.js';
+
 const createCube = () => {
-  const color = ['B', 'W', 'O', 'G', 'Y', 'R'];
+  const color = CUBE_COLOR;
   const emptyCube = Array(6).fill([]);
   const cube = emptyCube.map((_, index) => createFlatCube(color[index]));
 

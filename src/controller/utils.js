@@ -35,3 +35,5 @@ export const USER_INPUT = {
   RIGHT: 'R',
   NUMBER: '2',
 };
+
+export const CUBE_COLOR = ['B', 'W', 'O', 'G', 'Y', 'R'];
