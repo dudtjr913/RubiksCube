@@ -1,4 +1,4 @@
-import isInputValid from './input-valid.js';
+import isInputValid from './controller/input/valid.js';
 import Cube from './class/cube.js';
 import {
   createResultScreen,

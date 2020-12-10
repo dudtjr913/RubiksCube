@@ -1,6 +1,6 @@
-import {ERROR_MESSAGE} from './utils.js';
+import {ERROR_MESSAGE} from '../../utils.js';
 
-export default function isInputValid(matchedInput, userInput) {
+const isInputValid = (matchedInput, userInput) => {
   if (!matchedInput || userInput !== matchedInput.join('')) {
     return alert(ERROR_MESSAGE.WRONG_INPUT);
   }
@@ -9,4 +9,6 @@ export default function isInputValid(matchedInput, userInput) {
   }
 
   return true;
-}
+};
+
+export default isInputValid;
