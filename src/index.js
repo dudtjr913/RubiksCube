@@ -25,7 +25,7 @@ export default function onSubmitUserInput() {
     const requiredValue = changeNumberTwo(matchedInput);
     requiredValue.forEach((formula) => {
       startCubeTurn(formula);
-      const joinedCube = createJoinedCube(cubeGame.cube);
+      const joinedCube = createJoinedCube();
       createResultScreen(joinedCube, formula);
     });
   }
@@ -57,8 +57,8 @@ const startCubeTurn = (formula) => {
   }
 };
 
-const createJoinedCube = (cube) => {
-  const joinedCube = cube.map((flatCube) =>
+const createJoinedCube = () => {
+  const joinedCube = cubeGame.cube.map((flatCube) =>
     flatCube.map((side) => side.join(' ')),
   );
 
