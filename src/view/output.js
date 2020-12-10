@@ -33,9 +33,10 @@ const createCubeShape = (cube, formula) => {
 };
 
 export const removeResultScreen = () => {
-  const $cubeContainer = document.body.querySelector('#cube');
   const $screenUl = document.body.querySelector('#cube-list');
-  $cubeContainer.removeChild($screenUl);
+  while ($screenUl.firstChild) {
+    $screenUl.removeChild($screenUl.firstChild);
+  }
 };
 
 export const createFinishTextOnScreen = (count, elapsedTime) => {
