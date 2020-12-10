@@ -23,6 +23,7 @@ export const ERROR_MESSAGE = {
 export const FINISH_MESSAGE = {
   TURN_COUNT: '조작갯수 : ',
   THANK_MESSAGE: '이용해주셔서 감사합니다. 뚜뚜뚜.',
+  ELAPSE_TIME: '경과시간 : ',
 };
 
 export const USER_INPUT = {

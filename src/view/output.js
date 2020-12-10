@@ -33,7 +33,7 @@ export const createFinishTextOnScreen = (count, elapsedTime) => {
   const $finishContainer = document.createElement('div');
   const convertedTime = convertTime(elapsedTime);
   $finishContainer.innerHTML = `
-  <div>경과시간 : ${convertedTime.minutes} : ${convertedTime.seconds}</div>
+  <div>${FINISH_MESSAGE.ELAPSE_TIME} ${convertedTime.minutes} : ${convertedTime.seconds}</div>
   <div>${FINISH_MESSAGE.TURN_COUNT} ${count}</div>
   <div>${FINISH_MESSAGE.THANK_MESSAGE}</div>
   `;
