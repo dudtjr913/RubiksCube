@@ -1,16 +1,16 @@
-import isInputValid from './controller/input/valid.js';
-import {
-  extractMatchedInput,
-  changeNumberTwo,
-} from './controller/input/convert.js';
 import Cube from './model/cube.js';
 import {
   createResultScreen,
   removeResultScreen,
   createFinishTextOnScreen,
 } from './view/output.js';
-import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
 import {$userForm, $userInput} from './view/input.js';
+import isInputValid from './controller/input/valid.js';
+import {
+  extractMatchedInput,
+  changeNumberTwo,
+} from './controller/input/convert.js';
+import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
 
 const cubeGame = new Cube();
 
