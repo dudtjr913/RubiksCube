@@ -1,6 +1,7 @@
 import {FLAT_CUBE, EXTRACT_SIDE} from '../utils.js';
 import createCube from '../controller/cube/create.js';
 import extractSide from '../controller/cube/extract.js';
+import {pushClockWise, pushCounterClockWise} from '../controller/cube/push.js';
 
 const {U, B, L, F, R, D} = FLAT_CUBE;
 const {UP, LEFT, DOWN, RIGHT} = EXTRACT_SIDE;
@@ -89,22 +90,6 @@ export default class Cube {
     changeCube(flatCubes, extractionSides, pushedCube);
   }
 }
-
-const pushClockWise = (sideEntry) => {
-  const copySideEntry = [...sideEntry];
-  const pushedSide = copySideEntry.pop();
-  const result = [pushedSide, ...copySideEntry];
-
-  return result;
-};
-
-const pushCounterClockWise = (sideEntry) => {
-  const copySideEntry = [...sideEntry];
-  const pushedSide = copySideEntry.shift();
-  const result = [...copySideEntry, pushedSide];
-
-  return result;
-};
 
 const changeCube = (flatCubes, extractionSides, pushedCube) => {
   flatCubes.forEach((flatCube, index) => {
