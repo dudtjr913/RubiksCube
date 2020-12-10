@@ -42,6 +42,7 @@ export default function onSubmitUserInput() {
 const gameStart = () => {
   cubeGame = new Cube();
   startTime = new Date().getTime();
+  removeResultScreen();
   mixCube();
 };
 
