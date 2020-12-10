@@ -16,6 +16,7 @@ import {
   USER_INPUT,
   CUBE_SIDE,
   MIX_COUNT,
+  CUBE_COLOR,
 } from './controller/utils.js';
 
 let cubeGame = null;
@@ -61,6 +62,7 @@ const onSubmitUserInput = () => {
       const joinedCube = createJoinedCube();
       createResultScreen(joinedCube, formula);
     });
+    isGameFinish() && finishGame(cubeGame.count);
   }
   $userInput.value = '';
 };
@@ -103,4 +105,14 @@ const finishGame = (count) => {
   $userForm.removeEventListener('submit', onSubmitUserInput);
   removeResultScreen();
   createFinishTextOnScreen(count, elapsedTime.toFixed(0));
+};
+
+// 게임이 끝났는지 확인하는 함수 - 큐브의 row까지 들어가서
+// 9개의 배열이 모두 한가지 색으로 채워져 있는지 검사
+const isGameFinish = () => {
+  const differentColor = cubeGame.cube.find((flatCube, index) =>
+    flatCube.find((row) => !row.includes(CUBE_COLOR[index])),
+  );
+
+  return !differentColor;
 };
