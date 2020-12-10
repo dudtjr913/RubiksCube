@@ -13,81 +13,77 @@ export default class Cube {
     this.count = 0;
   }
 
+  static pushedCube = [];
+
   turnFront(formula) {
     const flatCubes = [this.cube[U], this.cube[R], this.cube[D], this.cube[L]];
     const extractionSides = [DOWN, LEFT, UP, RIGHT];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     } else {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 
   turnBack(formula) {
     const flatCubes = [this.cube[U], this.cube[R], this.cube[D], this.cube[L]];
     const extractionSides = [UP, RIGHT, DOWN, LEFT];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     } else {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 
   turnUp(formula) {
     const flatCubes = [this.cube[L], this.cube[F], this.cube[R], this.cube[B]];
     const extractionSides = [UP, UP, UP, UP];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     } else {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 
   turnDown(formula) {
     const flatCubes = [this.cube[L], this.cube[F], this.cube[R], this.cube[B]];
     const extractionSides = [DOWN, DOWN, DOWN, DOWN];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     } else {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 
   turnLeft(formula) {
     const flatCubes = [this.cube[U], this.cube[F], this.cube[D], this.cube[B]];
     const extractionSides = [LEFT, LEFT, LEFT, RIGHT];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     } else {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 
   turnRight(formula) {
     const flatCubes = [this.cube[U], this.cube[F], this.cube[D], this.cube[B]];
     const extractionSides = [RIGHT, RIGHT, RIGHT, LEFT];
     const sideEntry = extractSide(flatCubes, extractionSides);
-    let pushedCube = [];
     if (formula.includes("'")) {
-      pushedCube = pushClockWise(sideEntry);
+      this.pushedCube = pushClockWise(sideEntry);
     } else {
-      pushedCube = pushCounterClockWise(sideEntry);
+      this.pushedCube = pushCounterClockWise(sideEntry);
     }
-    changeCube(flatCubes, extractionSides, pushedCube);
+    changeCube(flatCubes, extractionSides, this.pushedCube);
   }
 }
