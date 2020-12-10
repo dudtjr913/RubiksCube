@@ -21,29 +21,13 @@ import {
 let cubeGame = null;
 let startTime = null;
 
-export function onSubmitUserInput() {
-  if ($userInput.value === USER_INPUT.QUIT) {
-    return finishGame(cubeGame.count);
-  }
-
-  const matchedInput = extractMatchedInput($userInput.value);
-  if (isInputValid(matchedInput, $userInput.value)) {
-    cubeGame.count += matchedInput.length;
-    const requiredValue = changeNumberTwo(matchedInput);
-    requiredValue.forEach((formula) => {
-      startCubeTurn(formula);
-      const joinedCube = createJoinedCube();
-      createResultScreen(joinedCube, formula);
-    });
-  }
-  $userInput.value = '';
-}
-
-export function gameStart() {
+export default function gameStart() {
   cubeGame = new Cube();
   startTime = new Date().getTime();
   removeResultScreen();
   mixCube();
+  $userInput.value = '';
+  $userForm.addEventListener('submit', onSubmitUserInput);
 }
 
 const mixCube = () => {
@@ -61,6 +45,24 @@ const createRandomFormula = () => {
   }
 
   return formula;
+};
+
+const onSubmitUserInput = () => {
+  if ($userInput.value === USER_INPUT.QUIT) {
+    return finishGame(cubeGame.count);
+  }
+
+  const matchedInput = extractMatchedInput($userInput.value);
+  if (isInputValid(matchedInput, $userInput.value)) {
+    cubeGame.count += matchedInput.length;
+    const requiredValue = changeNumberTwo(matchedInput);
+    requiredValue.forEach((formula) => {
+      startCubeTurn(formula);
+      const joinedCube = createJoinedCube();
+      createResultScreen(joinedCube, formula);
+    });
+  }
+  $userInput.value = '';
 };
 
 const startCubeTurn = (formula) => {
@@ -102,5 +104,3 @@ const finishGame = (count) => {
   removeResultScreen();
   createFinishTextOnScreen(count, elapsedTime.toFixed(0));
 };
-
-gameStart();
