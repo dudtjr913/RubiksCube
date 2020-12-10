@@ -4,7 +4,7 @@ import {
   createResultScreen,
   removeResultScreen,
   createFinishTextOnScreen,
-} from './screen.js';
+} from './view/output.js';
 import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
 import {$userForm, $userInput} from './view/input.js';
 
