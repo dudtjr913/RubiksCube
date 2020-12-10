@@ -3,7 +3,7 @@ import {
   extractMatchedInput,
   changeNumberTwo,
 } from './controller/input/convert.js';
-import Cube from './class/cube.js';
+import Cube from './model/cube.js';
 import {
   createResultScreen,
   removeResultScreen,
