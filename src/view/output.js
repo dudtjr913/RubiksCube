@@ -34,21 +34,23 @@ const createCubeShape = (cube, formula) => {
 
 export const removeResultScreen = () => {
   const $screenUl = document.body.querySelector('#cube-list');
+  const $resultContainer = document.body.querySelector('#result');
   while ($screenUl.firstChild) {
     $screenUl.removeChild($screenUl.firstChild);
+  }
+  while ($resultContainer.firstChild) {
+    $resultContainer.removeChild($resultContainer.firstChild);
   }
 };
 
 export const createFinishTextOnScreen = (count, elapsedTime) => {
-  const $cubeContainer = document.body.querySelector('#cube');
-  const $finishContainer = document.createElement('div');
+  const $finishContainer = document.body.querySelector('#result');
   const convertedTime = convertTime(elapsedTime);
   $finishContainer.innerHTML = `
   <div>${FINISH_MESSAGE.ELAPSE_TIME} ${convertedTime.minutes} : ${convertedTime.seconds}</div>
   <div>${FINISH_MESSAGE.TURN_COUNT} ${count}</div>
   <div>${FINISH_MESSAGE.THANK_MESSAGE}</div>
   `;
-  $cubeContainer.appendChild($finishContainer);
 };
 
 const convertTime = (time) => {
