@@ -18,8 +18,8 @@ import {
   MIX_COUNT,
 } from './controller/utils.js';
 
-const cubeGame = new Cube();
-const startTime = new Date().getTime();
+let cubeGame = null;
+let startTime = null;
 
 export default function onSubmitUserInput() {
   if ($userInput.value === USER_INPUT.QUIT) {
@@ -38,6 +38,29 @@ export default function onSubmitUserInput() {
   }
   $userInput.value = '';
 }
+
+const gameStart = () => {
+  cubeGame = new Cube();
+  startTime = new Date().getTime();
+  mixCube();
+};
+
+const mixCube = () => {
+  const randomFormula = createRandomFormula();
+  randomFormula.forEach((formula) => startCubeTurn(formula));
+  const joinedCube = createJoinedCube();
+  createInitialScreen(joinedCube);
+};
+
+const createRandomFormula = () => {
+  const formula = [];
+  while (formula.length < MIX_COUNT) {
+    const randomIndex = Math.floor(Math.random() * CUBE_SIDE.length);
+    formula.push(CUBE_SIDE[randomIndex]);
+  }
+
+  return formula;
+};
 
 const startCubeTurn = (formula) => {
   switch (formula[0]) {
@@ -79,21 +102,4 @@ const finishGame = (count) => {
   createFinishTextOnScreen(count, elapsedTime.toFixed(0));
 };
 
-const mixCube = () => {
-  const randomFormula = createRandomFormula();
-  randomFormula.forEach((formula) => startCubeTurn(formula));
-  const joinedCube = createJoinedCube();
-  createInitialScreen(joinedCube);
-};
-
-const createRandomFormula = () => {
-  const formula = [];
-  while (formula.length < MIX_COUNT) {
-    const randomIndex = Math.floor(Math.random() * CUBE_SIDE.length);
-    formula.push(CUBE_SIDE[randomIndex]);
-  }
-
-  return formula;
-};
-
-mixCube();
+gameStart();
