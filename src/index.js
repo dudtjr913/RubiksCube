@@ -1,4 +1,8 @@
 import isInputValid from './controller/input/valid.js';
+import {
+  extractMatchedInput,
+  changeNumberTwo,
+} from './controller/input/convert.js';
 import Cube from './class/cube.js';
 import {
   createResultScreen,
@@ -15,7 +19,7 @@ export default function onSubmitUserInput() {
     return finishGame(cubeGame.count);
   }
 
-  const matchedInput = extractMatchedInput();
+  const matchedInput = extractMatchedInput($userInput.value);
   if (isInputValid(matchedInput, $userInput.value)) {
     cubeGame.count += matchedInput.length;
     const requiredValue = changeNumberTwo(matchedInput);
@@ -27,22 +31,6 @@ export default function onSubmitUserInput() {
   }
   $userInput.value = '';
 }
-
-const extractMatchedInput = () => {
-  const matchedInput = $userInput.value.match(
-    /U'|D'|F'|B'|L'|R'|U|D|F|B|L|R|2/g,
-  );
-
-  return matchedInput;
-};
-
-const changeNumberTwo = (matchedInput) => {
-  const convertedValue = matchedInput.map((value, index) => {
-    return value === USER_INPUT.NUMBER ? matchedInput[index - 1] : value;
-  });
-
-  return convertedValue;
-};
 
 const startCubeTurn = (formula) => {
   switch (formula[0]) {
