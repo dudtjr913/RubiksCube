@@ -24,6 +24,7 @@ export const FINISH_MESSAGE = {
   TURN_COUNT: '조작갯수 : ',
   THANK_MESSAGE: '이용해주셔서 감사합니다. 뚜뚜뚜.',
   ELAPSE_TIME: '경과시간 : ',
+  WIN_MESSAGE: '큐브를 맞히셨습니다. 축하합니다!🎉',
 };
 
 export const USER_INPUT = {

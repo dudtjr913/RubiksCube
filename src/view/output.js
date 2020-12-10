@@ -43,13 +43,14 @@ export const removeResultScreen = () => {
   }
 };
 
-export const createFinishTextOnScreen = (count, elapsedTime) => {
+export const createFinishTextOnScreen = (count, elapsedTime, win) => {
+  const {ELAPSE_TIME, TURN_COUNT, WIN_MESSAGE, THANK_MESSAGE} = FINISH_MESSAGE;
   const $finishContainer = document.body.querySelector('#result');
   const convertedTime = convertTime(elapsedTime);
   $finishContainer.innerHTML = `
-  <div>${FINISH_MESSAGE.ELAPSE_TIME} ${convertedTime.minutes} : ${convertedTime.seconds}</div>
-  <div>${FINISH_MESSAGE.TURN_COUNT} ${count}</div>
-  <div>${FINISH_MESSAGE.THANK_MESSAGE}</div>
+  <div>${ELAPSE_TIME} ${convertedTime.minutes} : ${convertedTime.seconds}</div>
+  <div>${TURN_COUNT} ${count}</div>
+  <div>${win ? WIN_MESSAGE : THANK_MESSAGE}</div>
   `;
 };
 
