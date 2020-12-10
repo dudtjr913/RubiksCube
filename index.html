@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rubix's Cube step-3</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div id="cube">
@@ -24,14 +25,12 @@
       </pre
         >
       </div>
-      <button style="margin-bottom: 10px" id="mix-cube-btn">
-        큐브 섞기 & 게임 시작
-      </button>
+      <button id="mix-cube-btn">큐브 섞기 & 게임 시작</button>
       <form onsubmit="return false">
         <span>CUBE> </span>
         <input />
       </form>
-      <ul style="list-style: none; padding: 0; margin: 0" id="cube-list"></ul>
+      <ul id="cube-list"></ul>
       <div id="result"></div>
     </div>
     <script type="module" src="src/index.js"></script>
