@@ -28,12 +28,24 @@ export const removeResultScreen = () => {
   $cubeContainer.removeChild($screenUl);
 };
 
-export const createFinishTextOnScreen = (count) => {
+export const createFinishTextOnScreen = (count, elapsedTime) => {
   const $cubeContainer = document.body.querySelector('#cube');
   const $finishContainer = document.createElement('div');
+  const convertedTime = convertTime(elapsedTime);
   $finishContainer.innerHTML = `
+  <div>경과시간 : ${convertedTime.minutes} : ${convertedTime.seconds}</div>
   <div>${FINISH_MESSAGE.TURN_COUNT} ${count}</div>
   <div>${FINISH_MESSAGE.THANK_MESSAGE}</div>
   `;
   $cubeContainer.appendChild($finishContainer);
+};
+
+const convertTime = (time) => {
+  const minutes =
+    parseInt(time / 60) >= 10
+      ? parseInt(time / 60) % 60
+      : `0${parseInt(time / 60)}`;
+  const seconds = time >= 10 ? time % 60 : `0${time}`;
+
+  return {minutes, seconds};
 };
