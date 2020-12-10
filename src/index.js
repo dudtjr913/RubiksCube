@@ -50,7 +50,7 @@ const createRandomFormula = () => {
 
 const onSubmitUserInput = () => {
   if ($userInput.value === USER_INPUT.QUIT) {
-    return finishGame(cubeGame.count);
+    return finishGame();
   }
 
   const matchedInput = extractMatchedInput($userInput.value);
@@ -62,7 +62,7 @@ const onSubmitUserInput = () => {
       const joinedCube = createJoinedCube();
       createResultScreen(joinedCube, formula);
     });
-    isGameFinish() && finishGame(cubeGame.count);
+    isGameFinish() && finishGame();
   }
   $userInput.value = '';
 };
@@ -100,11 +100,11 @@ const createJoinedCube = () => {
   return joinedCube;
 };
 
-const finishGame = (count) => {
+const finishGame = () => {
   const elapsedTime = (new Date().getTime() - startTime) / 1000;
   $userForm.removeEventListener('submit', onSubmitUserInput);
   removeResultScreen();
-  createFinishTextOnScreen(count, elapsedTime.toFixed(0));
+  createFinishTextOnScreen(cubeGame.count, elapsedTime.toFixed(0));
 };
 
 // 게임이 끝났는지 확인하는 함수 - 큐브의 row까지 들어가서
