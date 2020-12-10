@@ -40,3 +40,5 @@ export const USER_INPUT = {
 export const CUBE_COLOR = ['B', 'W', 'O', 'G', 'Y', 'R'];
 export const CUBE_SIDE = ['U', 'D', 'R', 'L', 'F', 'B'];
 export const MIX_COUNT = 16;
+export const START_MESSAGE = `큐브를 섞고 게임을 시작합니다. 
+게임이 진행중이였다면 게임이 초기화됩니다. 진행하시겠습니까?`;
