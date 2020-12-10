@@ -1,4 +1,10 @@
+import createCube from '../controller/cube/create.js';
 import {FINISH_MESSAGE} from '../controller/utils.js';
+
+export const createInitialScreen = (cube) => {
+  const $cubeShape = document.body.querySelector('#cube-shape');
+  $cubeShape.innerHTML = createCubeShape(cube);
+};
 
 export const createResultScreen = (cube, formula) => {
   const $screenUl = document.body.querySelector('#cube-list');
