@@ -21,7 +21,7 @@ import {
 let cubeGame = null;
 let startTime = null;
 
-export default function onSubmitUserInput() {
+export function onSubmitUserInput() {
   if ($userInput.value === USER_INPUT.QUIT) {
     return finishGame(cubeGame.count);
   }
@@ -39,12 +39,12 @@ export default function onSubmitUserInput() {
   $userInput.value = '';
 }
 
-const gameStart = () => {
+export function gameStart() {
   cubeGame = new Cube();
   startTime = new Date().getTime();
   removeResultScreen();
   mixCube();
-};
+}
 
 const mixCube = () => {
   const randomFormula = createRandomFormula();
