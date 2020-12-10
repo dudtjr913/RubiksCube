@@ -1,6 +1,6 @@
 import {EXTRACT_SIDE} from '../../utils.js';
 
-export default function extractSide(flatCubes, extractionSides) {
+const extractSide = (flatCubes, extractionSides) => {
   const {LEFT, RIGHT} = EXTRACT_SIDE;
   const sideEntry = [];
   flatCubes.forEach((flatCube, index) => {
@@ -14,7 +14,7 @@ export default function extractSide(flatCubes, extractionSides) {
   });
 
   return sideEntry;
-}
+};
 
 const extractColumn = (flatCube, extractionSide) => {
   const column = [];
@@ -28,3 +28,5 @@ const extractRow = (flatCube, extractionSide) => {
 
   return row;
 };
+
+export default extractSide;

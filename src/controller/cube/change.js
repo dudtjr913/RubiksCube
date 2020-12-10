@@ -1,6 +1,6 @@
 import {EXTRACT_SIDE} from '../../utils.js';
 
-export default function changeCube(flatCubes, extractionSides, pushedCube) {
+const changeCube = (flatCubes, extractionSides, pushedCube) => {
   const {LEFT, RIGHT} = EXTRACT_SIDE;
   flatCubes.forEach((flatCube, index) => {
     if (extractionSides[index] === LEFT || extractionSides[index] === RIGHT) {
@@ -9,7 +9,7 @@ export default function changeCube(flatCubes, extractionSides, pushedCube) {
       changeCubeRow(flatCube, extractionSides[index], pushedCube[index]);
     }
   });
-}
+};
 
 const changeCubeColumn = (flatCube, extractionSide, pushedSide) => {
   return flatCube.forEach(
@@ -20,3 +20,5 @@ const changeCubeColumn = (flatCube, extractionSide, pushedSide) => {
 const changeCubeRow = (flatCube, extractionSide, pushedSide) => {
   return (flatCube[extractionSide] = pushedSide);
 };
+
+export default changeCube;
