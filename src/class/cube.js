@@ -1,7 +1,8 @@
-import {FLAT_CUBE, EXTRACT_SIDE} from '../utils.js';
 import createCube from '../controller/cube/create.js';
 import extractSide from '../controller/cube/extract.js';
+import changeCube from '../controller/cube/change.js';
 import {pushClockWise, pushCounterClockWise} from '../controller/cube/push.js';
+import {FLAT_CUBE, EXTRACT_SIDE} from '../utils.js';
 
 const {U, B, L, F, R, D} = FLAT_CUBE;
 const {UP, LEFT, DOWN, RIGHT} = EXTRACT_SIDE;
@@ -90,23 +91,3 @@ export default class Cube {
     changeCube(flatCubes, extractionSides, pushedCube);
   }
 }
-
-const changeCube = (flatCubes, extractionSides, pushedCube) => {
-  flatCubes.forEach((flatCube, index) => {
-    if (extractionSides[index] === LEFT || extractionSides[index] === RIGHT) {
-      changeCubeColumn(flatCube, extractionSides[index] - 1, pushedCube[index]);
-    } else {
-      changeCubeRow(flatCube, extractionSides[index], pushedCube[index]);
-    }
-  });
-};
-
-const changeCubeColumn = (flatCube, extractionSide, pushedSide) => {
-  return flatCube.forEach(
-    (side, index) => (side[extractionSide] = pushedSide[index]),
-  );
-};
-
-const changeCubeRow = (flatCube, extractionSide, pushedSide) => {
-  return (flatCube[extractionSide] = pushedSide);
-};
