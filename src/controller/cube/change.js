@@ -1,4 +1,4 @@
-import {EXTRACT_SIDE} from '../../utils.js';
+import {EXTRACT_SIDE} from '../utils.js';
 
 const changeCube = (flatCubes, extractionSides, pushedCube) => {
   const {LEFT, RIGHT} = EXTRACT_SIDE;

@@ -1,4 +1,4 @@
-import {ERROR_MESSAGE} from '../../utils.js';
+import {ERROR_MESSAGE} from '../utils.js';
 
 const isInputValid = (matchedInput, userInput) => {
   if (!matchedInput || userInput !== matchedInput.join('')) {

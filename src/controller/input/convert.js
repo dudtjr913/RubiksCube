@@ -1,4 +1,4 @@
-import {USER_INPUT} from '../../utils.js';
+import {USER_INPUT} from '../utils.js';
 
 export const extractMatchedInput = (userInput) => {
   const matchedInput = userInput.match(/U'|D'|F'|B'|L'|R'|U|D|F|B|L|R|2/g);

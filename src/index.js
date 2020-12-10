@@ -10,7 +10,7 @@ import {
   extractMatchedInput,
   changeNumberTwo,
 } from './controller/input/convert.js';
-import {ERROR_MESSAGE, USER_INPUT} from './utils.js';
+import {ERROR_MESSAGE, USER_INPUT} from './controller/utils.js';
 
 const cubeGame = new Cube();
 

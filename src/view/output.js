@@ -1,4 +1,4 @@
-import {FINISH_MESSAGE} from '../utils.js';
+import {FINISH_MESSAGE} from '../controller/utils.js';
 
 export const createResultScreen = (cube, formula) => {
   const $screenUl = document.body.querySelector('#cube-list');

@@ -2,7 +2,7 @@ import createCube from '../controller/cube/create.js';
 import extractSide from '../controller/cube/extract.js';
 import changeCube from '../controller/cube/change.js';
 import {pushClockWise, pushCounterClockWise} from '../controller/cube/push.js';
-import {FLAT_CUBE, EXTRACT_SIDE} from '../utils.js';
+import {FLAT_CUBE, EXTRACT_SIDE} from '../controller/utils.js';
 
 const {U, B, L, F, R, D} = FLAT_CUBE;
 const {UP, LEFT, DOWN, RIGHT} = EXTRACT_SIDE;
