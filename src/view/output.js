@@ -54,11 +54,12 @@ export const createFinishTextOnScreen = (count, elapsedTime) => {
 };
 
 const convertTime = (time) => {
+  const convertedMinutes = parseInt(time / 60) % 60;
+  const convertedSeconds = time % 60;
   const minutes =
-    parseInt(time / 60) >= 10
-      ? parseInt(time / 60) % 60
-      : `0${parseInt(time / 60)}`;
-  const seconds = time >= 10 ? time % 60 : `0${time}`;
+    convertedMinutes >= 10 ? convertedMinutes : `0${convertedMinutes}`;
+  const seconds =
+    convertedSeconds >= 10 ? convertedSeconds : `0${convertedSeconds}`;
 
   return {minutes, seconds};
 };
