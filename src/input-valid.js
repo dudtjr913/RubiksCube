@@ -1,10 +1,12 @@
+import {ERROR_MESSAGE, MAX_LENGTH} from './utils.js';
+
 export default function isInputValid(matchedInput, userInput) {
   if (matchedInput === null || matchedInput.join('') !== userInput) {
-    return alert("L, L', R, R', U, U', B, B' 중에서 입력해주세요.");
+    return alert(ERROR_MESSAGE.WRONG_INPUT);
   }
 
-  if (matchedInput.length > 20) {
-    return alert('20개 이하로 입력해주세요.');
+  if (matchedInput.length > MAX_LENGTH) {
+    return alert(ERROR_MESSAGE.LESS_LENGTH);
   }
 
   return true;

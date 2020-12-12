@@ -1,6 +1,6 @@
 import Cube from './class/cube.js';
 import isInputValid from './input-valid.js';
-import {cubeSide, QUIT_INPUT} from './utils.js';
+import {CUBE_SIDE, QUIT_INPUT} from './utils.js';
 import {
   createFinishScreen,
   createResultScreen,
@@ -34,16 +34,16 @@ import {
   };
 
   const moveCube = (side) => {
-    if (side === cubeSide.UP_LEFT || side === cubeSide.UP_RIGHT) {
+    if (side === CUBE_SIDE.UP_LEFT || side === CUBE_SIDE.UP_RIGHT) {
       return cubeGame.moveUp(side);
     }
-    if (side === cubeSide.DOWN_LEFT || side === cubeSide.DOWN_RIGHT) {
+    if (side === CUBE_SIDE.DOWN_LEFT || side === CUBE_SIDE.DOWN_RIGHT) {
       return cubeGame.moveDown(side);
     }
-    if (side === cubeSide.LEFT_UP || side === cubeSide.LEFT_DOWN) {
+    if (side === CUBE_SIDE.LEFT_UP || side === CUBE_SIDE.LEFT_DOWN) {
       return cubeGame.moveLeft(side);
     }
-    if (side === cubeSide.RIGHT_UP || side === cubeSide.RIGHT_DOWN) {
+    if (side === CUBE_SIDE.RIGHT_UP || side === CUBE_SIDE.RIGHT_DOWN) {
       return cubeGame.moveRight(side);
     }
   };

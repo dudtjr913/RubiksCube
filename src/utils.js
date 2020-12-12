@@ -1,4 +1,4 @@
-export const cubeSide = {
+export const CUBE_SIDE = {
   UP_LEFT: 'U',
   UP_RIGHT: "U'",
   DOWN_RIGHT: 'B',
@@ -9,4 +9,19 @@ export const cubeSide = {
   RIGHT_DOWN: "R'",
 };
 
+export const ERROR_MESSAGE = {
+  WRONG_INPUT: "L, L', R, R', U, U', B, B' 중에서 입력해주세요.",
+  LESS_LENGTH: '20개 이하로 입력해주세요.',
+};
+
+export const CUBE_SHAPE = [
+  ['R', 'R', 'W'],
+  ['G', 'C', 'W'],
+  ['G', 'B', 'B'],
+];
+export const UP = 0;
+export const LEFT = 0;
+export const DOWN = 2;
+export const RIGHT = 2;
+export const MAX_LENGTH = 20;
 export const QUIT_INPUT = 'Q';
