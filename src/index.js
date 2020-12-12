@@ -7,11 +7,10 @@ import pushUserSelectedWord from './push-word.js';
 
   const onSubmitUserInput = () => {
     const splitedInput = $cubeInput.value.split(' ');
-    if (!isUserInputValid(splitedInput)) {
-      return ($cubeInput.value = '');
+    if (isUserInputValid(splitedInput)) {
+      const pushedWordResult = pushUserSelectedWord(splitedInput);
+      printResultOnScreen($cubeInput.value, pushedWordResult);
     }
-    const pushedWordResult = pushUserSelectedWord(splitedInput);
-    printResultOnScreen($cubeInput.value, pushedWordResult);
 
     return ($cubeInput.value = '');
   };
