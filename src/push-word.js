@@ -1,17 +1,19 @@
+import {COMMON} from './utils.js';
+
 export default function pushUserSelectedWord(splitedInput) {
   const [word, count, direction] = splitedInput;
   const upperCaseDirection = direction.toUpperCase();
   const remainsCount = count % word.length; // 나머지 숫자
   if (
-    (count >= 0 && upperCaseDirection === 'L') ||
-    (count < 0 && upperCaseDirection === 'R')
+    (count >= 0 && upperCaseDirection === COMMON.LEFT) ||
+    (count < 0 && upperCaseDirection === COMMON.RIGHT)
   ) {
     return pushWordLeft(word, Math.abs(remainsCount));
   }
 
   if (
-    (count >= 0 && upperCaseDirection === 'R') ||
-    (count < 0 && upperCaseDirection === 'L')
+    (count >= 0 && upperCaseDirection === COMMON.RIGHT) ||
+    (count < 0 && upperCaseDirection === COMMON.LEFT)
   ) {
     return pushWordRight(word, Math.abs(remainsCount));
   }
