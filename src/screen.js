@@ -1,3 +1,5 @@
+import {FINISH_MESSAGE} from './utils.js';
+
 export const createResultScreen = (cubeGame, side) => {
   const $cubeUl = document.body.querySelector('#cube-list');
   const $cubeLi = document.createElement('li');
@@ -21,6 +23,6 @@ export const removeResultScreen = () => {
 export const createFinishScreen = () => {
   const $cubeContainer = document.body.querySelector('#cube');
   const $finishText = document.createElement('div');
-  $finishText.textContent = 'Bye~';
+  $finishText.textContent = FINISH_MESSAGE;
   $cubeContainer.appendChild($finishText);
 };

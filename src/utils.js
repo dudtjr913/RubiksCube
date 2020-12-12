@@ -25,3 +25,4 @@ export const DOWN = 2;
 export const RIGHT = 2;
 export const MAX_LENGTH = 20;
 export const QUIT_INPUT = 'Q';
+export const FINISH_MESSAGE = 'BYE~';
