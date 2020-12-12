@@ -32,8 +32,7 @@ export default class Cube {
   }
 
   moveLeft(side) {
-    const leftSideCube = [this.cube[0][0], this.cube[1][0], this.cube[2][0]];
-
+    const leftSideCube = this.cube.map((side) => side[0]);
     if (side === cubeSide.LEFT_UP) {
       this.changedCube = pushLeft(leftSideCube);
     } else {
@@ -46,8 +45,7 @@ export default class Cube {
   }
 
   moveRight(side) {
-    const rightSideCube = [this.cube[0][2], this.cube[1][2], this.cube[2][2]];
-
+    const rightSideCube = this.cube.map((side) => side[2]);
     if (side === cubeSide.RIGHT_UP) {
       this.changedCube = pushLeft(rightSideCube);
     } else {
