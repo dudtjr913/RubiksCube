@@ -1,10 +1,10 @@
-import {ERROR_MESSAGE} from '../utils.js';
+import {ERROR_MESSAGE, MAX_LENGTH} from '../utils.js';
 
 const isInputValid = (matchedInput, userInput) => {
   if (!matchedInput || userInput !== matchedInput.join('')) {
     return alert(ERROR_MESSAGE.WRONG_INPUT);
   }
-  if (matchedInput.length > 20) {
+  if (matchedInput.length > MAX_LENGTH) {
     return alert(ERROR_MESSAGE.LENGTH_LIMIT);
   }
 
