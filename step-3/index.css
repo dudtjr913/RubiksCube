@@ -1,0 +1,25 @@
+#mix-cube-btn {
+  margin-bottom: 10px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+#mix-cube-btn:hover {
+  background-color: lightyellow;
+}
+
+#cube-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+#cube-list > li {
+  border: 1px solid black;
+  padding-right: 15px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
